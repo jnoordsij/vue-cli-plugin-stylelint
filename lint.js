@@ -62,7 +62,7 @@ module.exports = async function lint(api, args = {}, pluginOptions = {}) {
   if (
     formatter &&
     typeof formatter === 'string' &&
-    !(['json', 'string', 'verbose'].includes(formatter))
+    !(['compact', 'json', 'string', 'unix', 'verbose'].includes(formatter))
   ) {
     try {
       // eslint-disable-next-line global-require, import/no-dynamic-require
