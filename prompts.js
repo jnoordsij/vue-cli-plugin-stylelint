@@ -26,13 +26,7 @@ const questions = [
         name: 'Prettier',
         value: 'prettier',
         short: 'prettier',
-      },
-      new inquirer.Separator(),
-      {
-        name: 'Kanbaru',
-        value: 'kanbaru',
-        short: 'Kanbaru',
-      },
+      }
     ],
   }, {
     name: 'lintStyleOn',

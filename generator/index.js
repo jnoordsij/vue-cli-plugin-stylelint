@@ -53,11 +53,6 @@ module.exports = (api, options = {}) => {
       'stylelint-prettier': '^1.1.2',
       prettier: '^1.19.1',
     });
-  } else if (config === 'kanbaru') {
-    pkg.stylelint.extends.push('@ascendancyy/stylelint-config-kanbaru');
-    Object.assign(pkg.devDependencies, {
-      '@ascendancyy/stylelint-config-kanbaru': '^2.0.0',
-    });
   }
 
   if (lintStyleOn.includes('commit')) {

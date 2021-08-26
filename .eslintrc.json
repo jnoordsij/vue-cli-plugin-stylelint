@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "env": {
+    "es5": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}

@@ -55,20 +55,6 @@ test('prettier', async () => {
   expect(pkg.stylelint.extends).toEqual(['stylelint-config-standard', 'stylelint-prettier/recommended']);
 });
 
-test('kanbaru', async () => {
-  const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
-    apply: require('../generator'),
-    options: {
-      config: 'kanbaru',
-    },
-  });
-
-  expect(pkg.scripts['lint:style']).toBeTruthy();
-  expect(pkg.devDependencies).toHaveProperty('@ascendancyy/stylelint-config-kanbaru');
-  expect(pkg.stylelint.extends).toEqual(['@ascendancyy/stylelint-config-kanbaru']);
-});
-
 test('lint on save', async () => {
   const { pkg } = await generateWithPlugin({
     id: '@samhammer/vue-cli-plugin-stylelint',
