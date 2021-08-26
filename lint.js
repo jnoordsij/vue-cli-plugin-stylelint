@@ -65,7 +65,6 @@ module.exports = async function lint(api, args = {}, pluginOptions = {}) {
     !(['compact', 'json', 'string', 'unix', 'verbose'].includes(formatter))
   ) {
     try {
-      // eslint-disable-next-line global-require, import/no-dynamic-require
       args.formatter = require(formatter);
     } catch (e) {
       delete args.formatter;

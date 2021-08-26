@@ -1,7 +1,6 @@
 // these prompts are used if the plugin is late-installed into an existing
 // project and invoked by `vue invoke`.
 
-const inquirer = require('inquirer');
 const { chalk, hasGit } = require('@vue/cli-shared-utils');
 const { hasStylelintConfig } = require('./utils');
 
