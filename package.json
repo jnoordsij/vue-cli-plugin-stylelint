@@ -28,17 +28,16 @@
   "homepage": "https://github.com/SamhammerAG/vue-cli-plugin-stylelint#readme",
   "dependencies": {
     "@vue/cli-shared-utils": "^4.5.13",
-    "inquirer": "^8.0.0",
     "javascript-stringify": "^2.1.0",
     "micromatch": "^4.0.4",
-    "stylelint-codeframe-formatter": "^1.0.4",
-    "stylelint-webpack-plugin": "^2.1.1"
+    "stylelint-codeframe-formatter": "^1.0.5",
+    "stylelint-webpack-plugin": "^2.2.2"
   },
   "devDependencies": {
     "@vue/cli": "^4.5.13",
     "@vue/cli-test-utils": "^4.5.13",
     "cross-env": "^7.0.3",
-    "eslint": "^7.26.0",
+    "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "stylelint": "^13.13.1"
   },
