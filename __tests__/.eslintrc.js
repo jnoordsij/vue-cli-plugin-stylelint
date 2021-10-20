@@ -6,6 +6,6 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    'global-require': 'off',
+    "global-require": "off",
   },
 };
