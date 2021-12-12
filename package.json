@@ -1,6 +1,6 @@
 {
   "name": "@raul338/vue-cli-plugin-stylelint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "stylelint": "^14.1.0"
   },
   "peerDependencies": {
-    "@vue/cli-service": "^4.0.0 || ^5.0.0",
+    "@vue/cli-service": "^4.0.0 || ^5.0.0-rc.1",
     "stylelint": "^14.0.0"
   }
 }
