@@ -1,6 +1,12 @@
-# @zysce/vue-cli-plugin-stylelint (forked from @samhammer/vue-cli-plugin-stylelint)
+# @raul338/vue-cli-plugin-stylelint
+forked from @zysce/vue-cli-plugin-stylelint
+forked from @samhammer/vue-cli-plugin-stylelint
+
 
 > stylelint plugin for vue-cli
+
+This allows you to use [stylelint-config-recommended-vue](https://github.com/ota-meshi/stylelint-config-recommended-vue)
+with [SCSS (recommended)](stylelint-config-recommended-scss) and/or [prettier](https://github.com/prettier/stylelint-prettier#recommended-configuration)
 
 ## Injected commands
 
@@ -42,21 +48,21 @@ module.exports = {
 via vue-cli (recommended)
 
 ```
-vue add @zysce/vue-cli-plugin-stylelint
+vue add @raul338/vue-cli-plugin-stylelint
 ```
 
 via yarn
 
 ```
-yarn add -D @zysce/vue-cli-plugin-stylelint
-vue invoke @zysce/vue-cli-plugin-stylelint
+yarn add -D @raul338/vue-cli-plugin-stylelint
+vue invoke @raul338/vue-cli-plugin-stylelint
 ```
 
 via npm
 
 ```
-npm install --save-dev @zysce/vue-cli-plugin-stylelint
-vue invoke @zysce/vue-cli-plugin-stylelint
+npm install --save-dev @raul338/vue-cli-plugin-stylelint
+vue invoke @raul338/vue-cli-plugin-stylelint
 ```
 
 ## webpack-chain Injections
