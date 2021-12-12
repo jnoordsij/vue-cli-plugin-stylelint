@@ -14,9 +14,9 @@ const questions = [
       overwriteConfig ? overwriteConfig !== "abort" : true,
     choices: [
       {
-        name: "Standard",
-        value: "standard",
-        short: "Standard",
+        name: "Recommended",
+        value: "recommended",
+        short: "Recommended",
       },
       {
         name: "Prettier",
