@@ -1,5 +1,5 @@
 {
-  "name": "@zysce/vue-cli-plugin-stylelint",
+  "name": "@raul338/vue-cli-plugin-stylelint",
   "version": "1.0.0",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zysce/vue-cli-plugin-stylelint.git"
+    "url": "git+https://github.com/raul338/vue-cli-plugin-stylelint.git"
   },
   "keywords": [
     "vue",
@@ -21,12 +21,12 @@
     "plugin",
     "stylelint"
   ],
-  "author": "Stephen Lam, Roland Schmitt, Zysce",
+  "author": "Stephen Lam, Roland Schmitt, Zysce, Raúl Arellano",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zysce/vue-cli-plugin-stylelint.git/issues"
+    "url": "https://github.com/raul338/vue-cli-plugin-stylelint.git/issues"
   },
-  "homepage": "https://github.com/Zysce/vue-cli-plugin-stylelint.git#readme",
+  "homepage": "https://github.com/raul338/vue-cli-plugin-stylelint.git#readme",
   "dependencies": {
     "@vue/cli-shared-utils": "^4.5.14",
     "javascript-stringify": "^2.1.0",
