@@ -3,7 +3,8 @@ const lint = require("../lint");
 
 const styleLint = {
   stylelint: "^14.1.0",
-  'postcss-html': '^1.3.0'
+  'postcss-html': '^1.3.0',
+  "eslint-plugin-promise": "^5.2.0",
 };
 
 const styleLintScss = {
