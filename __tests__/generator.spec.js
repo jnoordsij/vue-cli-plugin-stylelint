@@ -16,6 +16,7 @@ test("recommended", async () => {
     apply: require("../generator"),
     options: {
       config: "recommended",
+      scss: false,
     },
   });
 
@@ -24,12 +25,32 @@ test("recommended", async () => {
   expect(pkg.stylelint.extends).toEqual(["stylelint-config-recommended-vue"]);
 });
 
+test("recommended:scss", async () => {
+  const { pkg } = await generateWithPlugin({
+    id: "@raul338/vue-cli-plugin-stylelint",
+    apply: require("../generator"),
+    options: {
+      config: "recommended",
+      scss: true,
+    },
+  });
+
+  expect(pkg.scripts["lint:style"]).toBeTruthy();
+  expect(pkg.devDependencies).toHaveProperty("stylelint-config-recommended-scss");
+  expect(pkg.devDependencies).toHaveProperty("stylelint-config-recommended-vue");
+  expect(pkg.stylelint.extends).toEqual([
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recommended-vue/scss",
+  ]);
+});
+
 test("prettier", async () => {
   const { pkg } = await generateWithPlugin({
     id: "@raul338/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       config: "prettier",
+      scss: false,
     },
   });
 
@@ -40,6 +61,29 @@ test("prettier", async () => {
   expect(pkg.devDependencies).toHaveProperty("prettier");
   expect(pkg.stylelint.extends).toEqual([
     "stylelint-config-recommended-vue",
+    "stylelint-prettier/recommended",
+  ]);
+});
+
+test("prettier:scss", async () => {
+  const { pkg } = await generateWithPlugin({
+    id: "@raul338/vue-cli-plugin-stylelint",
+    apply: require("../generator"),
+    options: {
+      config: "prettier",
+      scss: true,
+    },
+  });
+
+  expect(pkg.scripts["lint:style"]).toBeTruthy();
+  expect(pkg.devDependencies).toHaveProperty("stylelint-config-recommended-scss");
+  expect(pkg.devDependencies).toHaveProperty("stylelint-config-recommended-vue");
+  expect(pkg.devDependencies).toHaveProperty("stylelint-config-prettier");
+  expect(pkg.devDependencies).toHaveProperty("stylelint-prettier");
+  expect(pkg.devDependencies).toHaveProperty("prettier");
+  expect(pkg.stylelint.extends).toEqual([
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recommended-vue/scss",
     "stylelint-prettier/recommended",
   ]);
 });

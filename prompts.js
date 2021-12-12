@@ -26,6 +26,14 @@ const questions = [
     ],
   },
   {
+    name: 'scss',
+    type: 'confirm',
+    message: 'Include SCSS support',
+    default: 0,
+    when: ({ overwriteConfig }) =>
+      overwriteConfig ? overwriteConfig !== "abort" : true,
+  },
+  {
     name: "lintStyleOn",
     type: "checkbox",
     message: "Pick additional stylelint features:",

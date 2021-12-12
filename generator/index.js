@@ -5,6 +5,10 @@ const styleLint = {
   stylelint: "^14.1.0",
 };
 
+const styleLintScss = {
+  "stylelint-config-recommended-scss": "^5.0.0",
+};
+
 const styleLintRecommended = {
   "stylelint-config-recommended-vue": "^1.1.0",
 };
@@ -50,15 +54,22 @@ module.exports = (api, options = {}) => {
     },
   };
 
-  const { config } = options;
+  const { config, scss } = options;
+
+  if (scss) {
+    pkg.stylelint.extends.push("stylelint-config-recommended-scss");
+    Object.assign(pkg.devDependencies, {
+      ...styleLintScss,
+    });
+  }
 
   if (config === "recommended") {
-    pkg.stylelint.extends.push("stylelint-config-recommended-vue");
+    pkg.stylelint.extends.push("stylelint-config-recommended-vue" + (scss ? '/scss' : ''));
     Object.assign(pkg.devDependencies, {
       ...styleLintRecommended,
     });
   } else if (config === "prettier") {
-    pkg.stylelint.extends.push("stylelint-config-recommended-vue");
+    pkg.stylelint.extends.push("stylelint-config-recommended-vue" + (scss ? '/scss' : ''));
     pkg.stylelint.extends.push("stylelint-prettier/recommended");
     Object.assign(pkg.devDependencies, {
       ...styleLintRecommended,
