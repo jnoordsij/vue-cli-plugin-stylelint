@@ -2,7 +2,7 @@ const generateWithPlugin = require("@vue/cli-test-utils/generateWithPlugin");
 
 test("base", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {},
   });
@@ -12,7 +12,7 @@ test("base", async () => {
 
 test("recommended", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       config: "recommended",
@@ -27,7 +27,7 @@ test("recommended", async () => {
 
 test("recommended:scss", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       config: "recommended",
@@ -46,7 +46,7 @@ test("recommended:scss", async () => {
 
 test("prettier", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       config: "prettier",
@@ -67,7 +67,7 @@ test("prettier", async () => {
 
 test("prettier:scss", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       config: "prettier",
@@ -90,7 +90,7 @@ test("prettier:scss", async () => {
 
 test("lint on save", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       lintStyleOn: "build",
@@ -101,7 +101,7 @@ test("lint on save", async () => {
 
 test("lint on commit", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       lintStyleOn: "commit",
@@ -119,7 +119,7 @@ test("lint on commit", async () => {
 
 test("cancel", async () => {
   const { pkg } = await generateWithPlugin({
-    id: "@raul338/vue-cli-plugin-stylelint",
+    id: "@SamhammerAG/vue-cli-plugin-stylelint",
     apply: require("../generator"),
     options: {
       overwriteConfig: "abort",

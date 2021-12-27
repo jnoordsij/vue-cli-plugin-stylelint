@@ -1,4 +1,4 @@
-# @raul338/vue-cli-plugin-stylelint
+# @SamhammerAG/vue-cli-plugin-stylelint
 forked from @zysce/vue-cli-plugin-stylelint
 forked from @samhammer/vue-cli-plugin-stylelint
 
@@ -48,21 +48,21 @@ module.exports = {
 via vue-cli (recommended)
 
 ```
-vue add @raul338/vue-cli-plugin-stylelint
+vue add @SamhammerAG/vue-cli-plugin-stylelint
 ```
 
 via yarn
 
 ```
-yarn add -D @raul338/vue-cli-plugin-stylelint
-vue invoke @raul338/vue-cli-plugin-stylelint
+yarn add -D @SamhammerAG/vue-cli-plugin-stylelint
+vue invoke @SamhammerAG/vue-cli-plugin-stylelint
 ```
 
 via npm
 
 ```
-npm install --save-dev @raul338/vue-cli-plugin-stylelint
-vue invoke @raul338/vue-cli-plugin-stylelint
+npm install --save-dev @SamhammerAG/vue-cli-plugin-stylelint
+vue invoke @SamhammerAG/vue-cli-plugin-stylelint
 ```
 
 ## webpack-chain Injections
