@@ -4,7 +4,7 @@
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./**/*.js",
+    "lint": "eslint ./generator/**/*.js ./__tests__/**/*.js",
     "jest": "cross-env VUE_CLI_TEST=true jest --env=node",
     "test": "npm run lint && npm run jest"
   },
