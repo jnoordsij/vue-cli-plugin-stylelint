@@ -1,28 +1,51 @@
-const { chalk } = require('@vue/cli-shared-utils');
-const lint = require('../lint');
+const { chalk } = require("@vue/cli-shared-utils");
+const lint = require("../lint");
+
+const styleLint = {
+  stylelint: "^14.2.0",
+  'postcss-html': '^1.3.0'
+};
+
+const styleLintScss = {
+  "stylelint-config-recommended-scss": "^5.0.0",
+};
+
+const styleLintRecommended = {
+  "stylelint-config-recommended-vue": "^1.1.0",
+};
+
+const styleLintPrettier = {
+  "stylelint-config-prettier": "^9.0.3",
+  "stylelint-prettier": "^2.0.0",
+  prettier: "^2.4.1",
+};
+
+const lintStaged = {
+  "lint-staged": "^12.0.0",
+};
 
 module.exports = (api, options = {}) => {
   const { overwriteConfig } = options;
-  if (overwriteConfig === 'abort') {
-    api.exitLog(chalk`{yellow Plugin setup successfully cancelled}`, 'warn');
+  if (overwriteConfig === "abort") {
+    api.exitLog(chalk`{yellow Plugin setup successfully cancelled}`, "warn");
     return;
   }
 
   let { lintStyleOn = [] } = options;
-  if (typeof lintStyleOn === 'string') {
-    lintStyleOn = lintStyleOn.split(',');
+  if (typeof lintStyleOn === "string") {
+    lintStyleOn = lintStyleOn.split(",");
   }
 
   const pkg = {
     scripts: {
-      'lint:style': 'vue-cli-service lint:style',
+      "lint:style": "vue-cli-service lint:style",
     },
     devDependencies: {
-      stylelint: '^13.0.0',
+      ...styleLint,
     },
     vue: {
       pluginOptions: {
-        lintStyleOnBuild: lintStyleOn.includes('build'),
+        lintStyleOnBuild: lintStyleOn.includes("build"),
         stylelint: {},
       },
     },
@@ -32,50 +55,54 @@ module.exports = (api, options = {}) => {
     },
   };
 
-  const { config } = options;
+  const { config, scss } = options;
 
-  if (config === 'standard') {
-    pkg.stylelint.extends.push('stylelint-config-standard');
+  if (scss) {
+    pkg.stylelint.extends.push("stylelint-config-recommended-scss");
     Object.assign(pkg.devDependencies, {
-      'stylelint-config-standard': '^20.0.0',
-    });
-  } else if (config === 'primer') {
-    pkg.stylelint.extends.push('stylelint-config-primer');
-    Object.assign(pkg.devDependencies, {
-      'stylelint-config-primer': '^9.0.0',
-    });
-  } else if (config === 'prettier') {
-    pkg.stylelint.extends.push('stylelint-config-standard');
-    pkg.stylelint.extends.push('stylelint-prettier/recommended');
-    Object.assign(pkg.devDependencies, {
-      'stylelint-config-standard': '^20.0.0',
-      'stylelint-config-prettier': '^8.0.1',
-      'stylelint-prettier': '^1.1.2',
-      prettier: '^1.19.1',
+      ...styleLintScss,
     });
   }
 
-  if (lintStyleOn.includes('commit')) {
+  if (config === "recommended") {
+    pkg.stylelint.extends.push("stylelint-config-recommended-vue" + (scss ? '/scss' : ''));
     Object.assign(pkg.devDependencies, {
-      'lint-staged': '^10.0.0',
+      ...styleLintRecommended,
+    });
+  } else if (config === "prettier") {
+    pkg.stylelint.extends.push("stylelint-config-recommended-vue" + (scss ? '/scss' : ''));
+    pkg.stylelint.extends.push("stylelint-prettier/recommended");
+    Object.assign(pkg.devDependencies, {
+      ...styleLintRecommended,
+      ...styleLintPrettier,
+    });
+  }
+
+  if (lintStyleOn.includes("commit")) {
+    Object.assign(pkg.devDependencies, {
+      ...lintStaged,
     });
     pkg.gitHooks = {
-      'pre-commit': 'lint-staged',
+      "pre-commit": "lint-staged",
     };
-    pkg['lint-staged'] = {
-      '*.{vue,htm,html,css,sss,less,scss}': ['vue-cli-service lint:style', 'git add'],
+    pkg["lint-staged"] = {
+      "*.{vue,htm,html,css,sss,less,scss}": [
+        "vue-cli-service lint:style",
+      ],
     };
   }
 
-  api.render('./template');
-  api.addConfigTransform('stylelint', {
+  api.render("./template");
+  api.addConfigTransform("stylelint", {
     file: {
-      js: ['.stylelintrc.js', 'stylelint.config.js'],
-      json: ['.stylelintrc', '.stylelintrc.json'],
-      yaml: ['.stylelintrc.yaml', '.stylelintrc.yml'],
+      js: [".stylelintrc.js", "stylelint.config.js"],
+      json: [".stylelintrc", ".stylelintrc.json"],
+      yaml: [".stylelintrc.yaml", ".stylelintrc.yml"],
     },
   });
   api.extendPackage(pkg);
 
-  api.onCreateComplete(async () => { await lint(api, { silent: true }); });
+  api.onCreateComplete(async () => {
+    await lint(api, { silent: true });
+  });
 };

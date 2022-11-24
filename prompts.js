@@ -1,44 +1,54 @@
 // these prompts are used if the plugin is late-installed into an existing
 // project and invoked by `vue invoke`.
 
-const { chalk, hasGit } = require('@vue/cli-shared-utils');
-const { hasStylelintConfig } = require('./utils');
+const { chalk, hasGit } = require("@vue/cli-shared-utils");
+const { hasStylelintConfig } = require("./utils");
 
 const questions = [
   {
-    name: 'config',
-    type: 'list',
-    message: 'Pick a stylelint config:',
+    name: "config",
+    type: "list",
+    message: "Pick a stylelint config:",
     default: 0,
-    when: ({ overwriteConfig }) => (overwriteConfig ? overwriteConfig !== 'abort' : true),
+    when: ({ overwriteConfig }) =>
+      overwriteConfig ? overwriteConfig !== "abort" : true,
     choices: [
       {
-        name: 'Standard',
-        value: 'standard',
-        short: 'Standard',
-      }, {
-        name: 'Primer',
-        value: 'primer',
-        short: 'Primer',
+        name: "Recommended",
+        value: "recommended",
+        short: "Recommended",
       },
       {
-        name: 'Prettier',
-        value: 'prettier',
-        short: 'prettier',
-      }
+        name: "Prettier",
+        value: "prettier",
+        short: "prettier",
+      },
     ],
-  }, {
-    name: 'lintStyleOn',
-    type: 'checkbox',
-    message: 'Pick additional stylelint features:',
-    when: ({ overwriteConfig }) => (overwriteConfig ? overwriteConfig !== 'abort' : true),
+  },
+  {
+    name: 'scss',
+    type: 'confirm',
+    message: 'Include SCSS support',
+    default: 0,
+    when: ({ overwriteConfig }) =>
+      overwriteConfig ? overwriteConfig !== "abort" : true,
+  },
+  {
+    name: "lintStyleOn",
+    type: "checkbox",
+    message: "Pick additional stylelint features:",
+    when: ({ overwriteConfig }) =>
+      overwriteConfig ? overwriteConfig !== "abort" : true,
     choices: [
       {
-        name: 'Lint on build',
-        value: 'build',
-      }, {
-        name: `Lint and fix on commit ${hasGit() ? '' : chalk`{red  (requires Git)}`}`,
-        value: 'commit',
+        name: "Lint on build",
+        value: "build",
+      },
+      {
+        name: `Lint and fix on commit ${
+          hasGit() ? "" : chalk`{red  (requires Git)}`
+        }`,
+        value: "commit",
       },
     ],
   },
@@ -47,18 +57,20 @@ const questions = [
 const cwd = process.cwd();
 if (hasStylelintConfig(cwd)) {
   questions.unshift({
-    name: 'overwriteConfig',
-    type: 'expand',
-    message: 'Existing stylelint config found:',
+    name: "overwriteConfig",
+    type: "expand",
+    message: "Existing stylelint config found:",
     choices: [
       {
-        key: 'y',
-        name: 'Overwrite',
-        value: 'overwrite',
-      }, {
-        key: 'x',
-        name: 'Cancel setup (Plugin generator will be invoked, but will not make changes)',
-        value: 'abort',
+        key: "y",
+        name: "Overwrite",
+        value: "overwrite",
+      },
+      {
+        key: "x",
+        name:
+          "Cancel setup (Plugin generator will be invoked, but will not make changes)",
+        value: "abort",
       },
     ],
   });
