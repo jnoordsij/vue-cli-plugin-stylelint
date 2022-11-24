@@ -71,3 +71,8 @@ vue invoke @SamhammerAG/vue-cli-plugin-stylelint
 - `config.plugin('stylelint')`
 - `config.plugin('stylelint').use('stylelint-webpack-plugin')`
 - `config.plugin('friendly-errors').tap(/* Adds additional transformer and formatter */)`
+
+## How to publish
+
+- Increase version by running 'yarn version' command. This updates package.json and creates tag
+- Check github action to validated, that package was released to npm registry.
