@@ -1,6 +1,8 @@
 # @SamhammerAG/vue-cli-plugin-stylelint
 forked from @ascendancyy/vue-cli-plugin-stylelint
+
 merged fork of @zysce/vue-cli-plugin-stylelint
+
 merged fork of @raul338/vue-cli-plugin-stylelint
 
 
