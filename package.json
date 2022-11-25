@@ -1,6 +1,6 @@
 {
   "name": "@samhammer/vue-cli-plugin-stylelint",
-  "version": "5.0.0",
+  "version": "5.0.8",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
