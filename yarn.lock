@@ -7612,7 +7612,7 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==
 
-stylelint-codeframe-formatter@^1.0.5:
+stylelint-codeframe-formatter@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-codeframe-formatter/-/stylelint-codeframe-formatter-1.1.0.tgz#e3ce6b35cbec875e33e660f870af653ae0fcc048"
   integrity sha512-NckDJeUJAtexmU416fdDDp/7CulrcQORBuNhQmQSBksFpVj+ppTtq9XIlQsOIdlA9fnzWUX4BlzLDJnt5bmp+w==
@@ -7622,7 +7622,7 @@ stylelint-codeframe-formatter@^1.0.5:
     log-symbols "^4.1.0"
     plur "^4.0.0"
 
-stylelint-webpack-plugin@^3.0.1:
+stylelint-webpack-plugin@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-3.3.0.tgz#3ba40e2b2b2b7d1802fa53618e01fc28bc21ffb3"
   integrity sha512-F53bapIZ9zI16ero8IWm6TrUE6SSibZBphJE9b5rR2FxtvmGmm1YmS+a5xjQzn63+cv71GVSCu4byX66fBLpEw==
