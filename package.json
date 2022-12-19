@@ -47,5 +47,8 @@
     "@vue/cli-service": "^5.0.0",
     "stylelint": "^13.0.0 || ^14.0.0",
     "webpack": "^5.0.0"
-  }
+  },
+  "resolutions": {
+    "@vue/cli-test-utils/json-server": "^0.17.1"
+  }  
 }
